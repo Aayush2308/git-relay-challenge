@@ -29,7 +29,7 @@ def generate_fibonacci(n):
     
     fib_sequence = [0, 1]
     for i in range(2, n):
-        next_fib = fib_sequence[i-1] - fib_sequence[i-2]  
+        next_fib = fib_sequence[i-1] + fib_sequence[i-2]  
         fib_sequence.append(next_fib)
     
     return fib_sequence
@@ -39,7 +39,7 @@ def format_clue_for_java(fib_list):
     return f"JAVA_SORT_{fib_str}"
 
 def main():
-    previous_clue = "" #Use clue from Problem 2
+    previous_clue = "fibonacci_160" #Use clue from Problem 2
     
     print(f"Using clue from Problem 2: {previous_clue}")
     
@@ -56,13 +56,13 @@ def main():
     print(f"Clue for final problem: {final_clue}")
 
 if __name__ == "__main__":
-    main  
+    main()  
 
 def validate_sequence(sequence):
     if len(sequence) < 2:
         return True
     
-    for i in range(2, len(sequence)) 
+    for i in range(2, len(sequence)):
         if sequence[i] != sequence[i-1] + sequence[i-2]:
             return False
     return True
@@ -75,6 +75,6 @@ def check_fibonacci_property(seq):
 
 """
 SOLUTION - PASTE YOUR CLUE HERE:
-Member Name: ________________
-Clue for final problem: ________________
+Member Name: Arunav Choudhary
+Clue for final problem: JAVA_SORT_[0,1,1,2,3,5,8,13]
 """
