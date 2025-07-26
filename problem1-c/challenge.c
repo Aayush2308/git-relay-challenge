@@ -34,7 +34,7 @@ bool isPrime(int n)
 int main()
 {
     int arr[] = {17, 8, 13, 4, 29, 6, 11, 15};
-    int size = sizeof(arr) / sizeof(arr[0]) 
+    int size = sizeof(arr) / sizeof(arr[0]);
     int primePositions[size];
     int primeCount = 0;
 
@@ -68,7 +68,7 @@ int main()
     }
     printf("]\n");
 
-    printf("Clue for C++ problem: [") 
+    printf("Clue for C++ problem: [");
     for (int i = 0; i < primeCount; i++)
     { 
         printf("%d", primePositions[i]);
@@ -82,6 +82,6 @@ int main()
 
 /*
 SOLUTION - PASTE YOUR CLUE HERE:
-Member Name: ________________
-Clue for C++ problem: ________________
+Member Name: Sayantan Nandi
+Clue for C++ problem: [0, 2, 4, 6]
 */
