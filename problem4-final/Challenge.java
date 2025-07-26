@@ -1,17 +1,4 @@
-/*
- * GOAL: Parse the clue from Problem 3 and complete the final sorting challenge
- * 
- * The program should:
- * 1. Parse the clue from Problem 3 to extract the array
- * 2. Sort the array using a custom bubble sort algorithm
- * 3. Display the final success message for the team
- * 
- * Expected final output: Team completion message
- */
-
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Challenge {
     
@@ -20,7 +7,7 @@ public class Challenge {
             int startIndex = clue.indexOf('[');
             int endIndex = clue.indexOf(']');
             
-            if (startIndex == -1 && endIndex == -1) {  
+            if (startIndex == -1 || endIndex == -1) {  
                 return new int[0];
             }
             
@@ -43,7 +30,7 @@ public class Challenge {
         
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] < arr[j + 1]) {  
+                if (arr[j] < arr[j + 1]) {  // descending order
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -59,17 +46,11 @@ public class Challenge {
     }
     
     public static void main(String[] args) {
-        String previousClue = "0,1,1,2,3,5,8,13"; //Use clue from Problem 3
-        
-        System.out.println("Using clue from Problem 3: " + previousClue);
+        String previousClue = "JAVA_SORT_[0,1,1,2,3,5,8,13]";
         
         int[] extractedArray = parseClueArray(previousClue);
-        System.out.println("Extracted array: " + Arrays.toString(extractedArray))  ;
-        
         bubbleSort(extractedArray);
-        System.out.println("Array after custom sort: " + Arrays.toString(extractedArray));
-        
-        displayFinalSolution()   ;
+        displayFinalSolution();
     }
 }
 
@@ -77,5 +58,6 @@ public class Challenge {
 SOLUTION - PASTE YOUR FINAL SOLUTION HERE:
 Member Name: Aayush Joshi
 Final Solution Message: FINAL SOLUTION: The team successfully solved all 4 problems!
-
+Team completed: C → C++ → Python → Java relay!
+Congratulations 🎉! You navigated the repo, decoded the nonsense, and came out version-controlled. Respect.
 */
