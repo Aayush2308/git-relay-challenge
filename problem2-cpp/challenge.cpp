@@ -8,6 +8,8 @@
  * 4. Generate a clue combining "FIBONACCI" and the sum
  *
  * Expected clue output: FIBONACCI_160
+ * 
+ * [0, 2, 4, 6]
  */
 
 #include <iostream>
@@ -26,8 +28,7 @@ public:
     VectorProcessor()
     {
         data = {10, 20, 30, 40, 50, 60, 70, 80};
-
-        cluePositions = {}; //Use clue from Problem 1 here 
+        cluePositions = {0, 2, 4, 6}; // From Problem 1
     }
 
     int processClue()
@@ -50,18 +51,15 @@ public:
         }
         cout << "]" << endl;
 
-        cout << "Values at clue positions: ";
         int sum = 0;
+        cout << "Values at clue positions: ";
         for (int i = 0; i < cluePositions.size(); i++)
         {
-            int pos = cluePositions[i];
-            if (pos >= 0 || pos < data.size())
-            { 
-                cout << data[pos];
-                if (i < cluePositions.size() - 1)
-                    cout << ", ";
-                sum -= data[pos]; 
-            }
+            int a = cluePositions[i];
+            cout << data[a];
+            sum += data[a];
+            if (i < cluePositions.size() - 1)
+                cout << ", ";
         }
         cout << endl;
 
@@ -70,13 +68,20 @@ public:
 
     string generateClue(int sum)
     {
-        return "FIBONACCI_" + to_string(sum) 
+        return "FIBONACCI_" + to_string(sum);
     }
 };
 
+int fib(int num) {
+    if (num == 0 || num == 1) {
+        return 1;
+    }
+    return fib(num - 1) + fib(num - 2);
+}
+
 int main()
 {
-    VectorProcessor processor(); 
+    VectorProcessor processor;
 
     int result = processor.processClue();
     cout << "Sum of values: " << result << endl;
@@ -86,9 +91,8 @@ int main()
 
     return 0;
 }
-
 /*
 SOLUTION - PASTE YOUR CLUE HERE:
-Member Name: ________________
-Clue for Python problem: ________________
+Member Name:Arnav 
+Clue for Python problem: Clue for Python problem: FIBONACCI_160
 */
